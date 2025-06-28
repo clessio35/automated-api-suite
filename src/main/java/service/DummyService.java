@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 
 import hooks.Hooks;
@@ -27,7 +28,7 @@ public class DummyService {
 			.contentType(ContentType.JSON).get(endpoint);
 		ReportUtils.logInfo("Status code: " + response.getStatusCode());
 	}
-
+	
 	public void validateCompleteProductsList() {
 		ReportUtils.logInfo("Validate List products");
 		response.then().statusCode(200).log().all().extract().jsonPath();
@@ -41,6 +42,36 @@ public class DummyService {
 		    Assert.assertTrue(item.get("stock").getClass().equals(Integer.class));
 		    Assert.assertTrue(item.get("tags").getClass().equals(ArrayList.class));
 		}
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+	}
+	
+	public Integer captureIdProduct(String endpoint) {
+		System.out.println("Capture id");
+		response = RestAssured.given().log().body()
+				.when().contentType(ContentType.JSON)
+				.get(endpoint);
+				response.then().statusCode(200);
+		List<Integer> ids = new ArrayList<Integer>();
+		ids = response.jsonPath().getList("products.id");
+		System.out.println(ids.stream().findFirst().orElse(-1));
+		return ids.stream().findFirst().orElse(-1);
+	}
+
+	public void sendRequestGETMethodWithIdUser(String endpoint) {
+		ReportUtils.logInfo("Send request for endpoint: " + endpoint);
+		int id = captureIdProduct(endpoint);
+		response = RestAssured.given().log().all()
+			.contentType(ContentType.JSON).get(endpoint + id);
+		ReportUtils.logInfo("Status code: " + response.getStatusCode());
+		
+	}
+
+	public void validateResponseSpecificProduct() {
+		ReportUtils.logInfo("Validate product id");
+		response.then().statusCode(200).log().body()
+			.body("id", Matchers.instanceOf(Integer.class))
+			.body("title", Matchers.instanceOf(String.class))
+			.body("description", Matchers.instanceOf(String.class));
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 

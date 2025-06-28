@@ -1,6 +1,6 @@
 package runner;
-import org.junit.BeforeClass;
 import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
@@ -11,7 +11,7 @@ import utils.ReportUtils;
 @CucumberOptions(
   features = "src/test/resources/features",
   glue = {"steps", "hooks"},
-  tags= "@list-products"
+  tags= "@product-details"
 )
 public class RunnerTest {
 

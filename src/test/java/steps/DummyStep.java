@@ -25,15 +25,13 @@ public class DummyStep {
 	}
 
 	@When("realizo uma request GET para {string} e id válido")
-	public void realizo_uma_request_get_para_e_id_válido(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void realizo_uma_request_get_para_e_id_válido(String endpoint) {
+		service.sendRequestGETMethodWithIdUser(endpoint);
 	}
 
 	@Then("eu valido os dados do produto específico")
 	public void eu_valido_os_dados_do_produto_específico() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    service.validateResponseSpecificProduct();
 	}
 
 	@Then("eu valido que o erro retornado tem o status code {string}")
