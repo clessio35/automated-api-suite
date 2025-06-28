@@ -1,11 +1,14 @@
 package utils;
 
+import java.io.File;
+import java.io.IOException;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-import java.io.IOException;
+import io.restassured.response.Response;
 
 public class ReportUtils {
 
@@ -45,12 +48,19 @@ public class ReportUtils {
         }
     }
 
-    // Anexa evidência PDF gerada no relatório
-    public static void attachEvidence(io.restassured.response.Response response, String scenarioName) {
+    public static void attachEvidence(Response response, String scenarioName) {
         try {
             String pdfPath = EvidenceUtils.takeScreenshot(response, scenarioName);
+
+            // Caminho absoluto do relatório e do pdf
+            File reportFile = new File("reports/ExtentReport.html");
+            File pdfFile = new File(pdfPath);
+
+            // Calcula caminho relativo do PDF para o relatório
+            String relativePath = reportFile.getParentFile().toURI().relativize(pdfFile.toURI()).getPath();
+
             if (test != null) {
-                test.info("Evidência em PDF: <a href='" + pdfPath + "' target='_blank'>Clique aqui para abrir</a>");
+                test.info("Evidência em PDF: <a href='" + relativePath + "' target='_blank'>Clique aqui para abrir</a>");
             }
         } catch (IOException e) {
             if (test != null) {

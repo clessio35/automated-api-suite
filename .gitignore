@@ -1,0 +1,33 @@
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Build folders (Maven/Gradle)
+target/
+build/
+
+# Reports and evidences (gerados durante os testes)
+reports/
+Evidences/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Maven local repo (normalmente não versionado)
+.m2/repository/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Others
+*.bak
+*.swp

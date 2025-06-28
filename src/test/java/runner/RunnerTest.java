@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import utils.ReportUtils;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -16,11 +17,11 @@ public class RunnerTest {
 
     @BeforeClass
     public static void beforeAll() {
-        utils.ReportUtils.initReport();
+        ReportUtils.initReport();
     }
 
     @AfterClass
     public static void afterAll() {
-        utils.ReportUtils.flushReport();
+        ReportUtils.flushReport();
     }
 }

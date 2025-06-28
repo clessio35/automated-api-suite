@@ -6,11 +6,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import com.itextpdf.io.font.constants.StandardFonts;
+import com.itextpdf.kernel.colors.ColorConstants;
+import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.properties.TextAlignment;
 
 import io.restassured.response.Response;
 
@@ -18,56 +21,70 @@ public class EvidenceUtils {
 
     /**
      * Gera um PDF com evidência da resposta da API.
-     * @param response resposta da API RestAssured
-     * @param scenarioName nome do cenário para pastas e arquivo
-     * @return caminho completo do arquivo PDF gerado
-     * @throws IOException se falhar na geração do arquivo
+     *
+     * @param response     resposta da API
+     * @param scenarioName nome do cenário
+     * @return caminho do arquivo PDF
+     * @throws IOException se falhar na geração do PDF
      */
     public static String takeScreenshot(Response response, String scenarioName) throws IOException {
-        // Formata a data e hora atual
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy_HHmm");
-        String format = formatter.format(LocalDateTime.now());
+        // Formata data e hora
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String timestamp = formatter.format(LocalDateTime.now());
 
-        // Sanitiza nome do cenário para evitar caracteres inválidos
+        String fileTimestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyy_HHmm"));
         String sanitizedName = sanitizeFileName(scenarioName != null ? scenarioName : "unknown_scenario");
 
-        // Cria pasta base para guardar evidências do cenário
+        // Caminho da pasta e do arquivo
         String baseFolderPath = "Evidences/API/" + sanitizedName;
         File testFolder = new File(baseFolderPath);
-        if (!testFolder.exists()) {
-            testFolder.mkdirs();
-        }
+        if (!testFolder.exists()) testFolder.mkdirs();
 
-        // Define caminho do arquivo PDF
-        String filePath = baseFolderPath + "/evidences_" + format + ".pdf";
+        String filePath = baseFolderPath + "/evidences_" + fileTimestamp + ".pdf";
 
-        // Cria o PDF com iText
+        // Cria PDF
         PdfWriter writer = new PdfWriter(filePath);
         PdfDocument pdf = new PdfDocument(writer);
         Document document = new Document(pdf);
 
-        // Adiciona conteúdo ao PDF
-        document.add(new Paragraph("RESPONSE TAKESCREENSHOT")
-            .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD))
-            .setFontSize(16));
+        PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
+        PdfFont regular = PdfFontFactory.createFont(StandardFonts.HELVETICA);
 
-        document.add(new Paragraph("\n\n"));
-        document.add(new Paragraph("STATUS CODE: " + response.getStatusCode()));
-        document.add(new Paragraph("RESPONSE BODY: " + response.getBody().asString()));
-        document.add(new Paragraph("RESPONSE HEADERS: " + response.getHeaders().toString()));
-        document.add(new Paragraph("TIMESTAMP: " + LocalDateTime.now()));
+        // Cabeçalho com status
+        boolean isSuccess = response.getStatusCode() >= 200 && response.getStatusCode() < 300;
+        String statusText = isSuccess ? "PASS" : "FAIL";
 
-        // Fecha documento para finalizar arquivo
+        Paragraph header = new Paragraph("TEST RESULT: " + statusText)
+                .setFont(bold)
+                .setFontSize(18)
+                .setFontColor(isSuccess ? ColorConstants.GREEN : ColorConstants.RED)
+                .setTextAlignment(TextAlignment.CENTER);
+
+        document.add(header);
+
+        // Informações gerais
+        document.add(new Paragraph("Scenario: " + scenarioName).setFont(bold).setFontSize(14));
+        document.add(new Paragraph("Date: " + timestamp).setFont(regular).setFontSize(12));
+        document.add(new Paragraph("Status Code: " + response.getStatusCode()).setFont(regular).setFontSize(12));
+        document.add(new Paragraph("\n"));
+
+        // Corpo da resposta
+        document.add(new Paragraph("Response Body:").setFont(bold).setFontSize(13));
+        document.add(new Paragraph(response.getBody().asPrettyString()).setFont(regular).setFontSize(11));
+        document.add(new Paragraph("\n"));
+
+        // Headers
+        document.add(new Paragraph("Headers:").setFont(bold).setFontSize(13));
+        document.add(new Paragraph(response.getHeaders().toString()).setFont(regular).setFontSize(11));
+
         document.close();
+        System.out.println("Evidence PDF generated at: " + filePath);
 
-        System.out.println("Evidence generated in PDF format in the folder '" + baseFolderPath + "'!");
-
-        // Retorna o caminho para anexar no relatório
         return filePath;
     }
 
     /**
-     * Sanitiza o nome para uso em arquivo/pasta (remove caracteres inválidos)
+     * Remove caracteres inválidos para nomes de arquivos/pastas.
      */
     private static String sanitizeFileName(String fileName) {
         return fileName.replaceAll("[<>:\"/\\\\|?*]", "_").replaceAll("\\s+", "_");

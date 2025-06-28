@@ -15,15 +15,13 @@ public class DummyStep {
 	}
 
 	@When("realizo uma request GET para {string}")
-	public void realizo_uma_request_get_para(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void realizo_uma_request_get_para(String endpoint) {
+	    service.sendRequestGETMethod(endpoint);
 	}
 
 	@Then("eu valido a resposta com a lista completa de produtos")
 	public void eu_valido_a_resposta_com_a_lista_completa_de_produtos() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    service.validateCompleteProductsList();
 	}
 
 	@When("realizo uma request GET para {string} e id válido")
