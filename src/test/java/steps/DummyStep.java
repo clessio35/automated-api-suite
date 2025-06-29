@@ -46,8 +46,7 @@ public class DummyStep {
 
 	@Then("eu valido os dados da postagem específica")
 	public void eu_valido_os_dados_da_postagem_específica() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    service.validateResponseWithSpecificPost();
 	}
 
 	@Then("eu valido a resposta com a lista completa de comentários")

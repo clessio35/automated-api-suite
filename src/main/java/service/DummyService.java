@@ -52,8 +52,9 @@ public class DummyService {
 				.get(endpoint);
 				response.then().statusCode(200);
 		List<Integer> ids = new ArrayList<Integer>();
-		ids = response.jsonPath().getList("products.id");
+		ids = response.jsonPath().getList(endpoint + ".id");
 		System.out.println(ids.stream().findFirst().orElse(-1));
+		System.out.println("id: " + ids.stream().findFirst().orElse(-1));
 		return ids.stream().findFirst().orElse(-1);
 	}
 
@@ -104,6 +105,15 @@ public class DummyService {
 		    Assert.assertTrue(post.get("views").getClass().equals(Integer.class));
 		    Assert.assertTrue(post.get("userId").getClass().equals(Integer.class));
 		}
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+	}
+
+	public void validateResponseWithSpecificPost() {
+		ReportUtils.logInfo("Validate complete list");
+		response.then().statusCode(200).log().body()
+			.body("id", Matchers.instanceOf(Integer.class))
+			.body("title", Matchers.instanceOf(String.class))
+			.body("body", Matchers.instanceOf(String.class));
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 
