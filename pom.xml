@@ -2,9 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>automated-api-suite</groupId>
 	<artifactId>automated-api-suite</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
@@ -12,6 +14,14 @@
 	</properties>
 
 	<dependencies>
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Cucumber -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -24,21 +34,21 @@
 			<version>6.11.0</version>
 		</dependency>
 
-		<!-- Allure Result Generation -->
+		<!-- Allure -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-cucumber6-jvm</artifactId>
 			<version>2.20.0</version>
 		</dependency>
-		
-		<!-- ExtentReports para relatórios -->
+
+		<!-- ExtentReports -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>5.0.9</version>
 		</dependency>
 
-		<!-- SLF4J para ExtentReports -->
+		<!-- SLF4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
@@ -66,7 +76,7 @@
 			<version>4.4.0</version>
 		</dependency>
 
-		<!-- Apache POI (Excel) -->
+		<!-- Apache POI -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -113,14 +123,13 @@
 			<version>2.11.0</version>
 		</dependency>
 
-		<!-- PDF (caso use iText Core como BOM/pom) -->
+		<!-- iText PDF -->
 		<dependency>
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itext-core</artifactId>
 			<version>9.1.0</version>
 			<type>pom</type>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -134,10 +143,15 @@
 					<source>17</source>
 					<target>17</target>
 					<encoding>UTF-8</encoding>
+					<fork>true</fork>
+					<compilerArgs>
+						<arg>--add-exports</arg>
+						<arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 
-			<!-- Plugin de testes -->
+			<!-- Testes -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>

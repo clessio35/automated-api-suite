@@ -75,4 +75,12 @@ public class DummyService {
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 
+	public void validateResponseWithError(String statusCode) {
+		ReportUtils.logInfo("Validate Error Code");
+		int sc = Integer.parseInt(statusCode);
+		response.then().statusCode(sc).log().body()
+			.body("message", Matchers.equalTo("Product with id '9999' not found"));
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+	}
+
 }

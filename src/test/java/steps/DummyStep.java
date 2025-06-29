@@ -35,9 +35,8 @@ public class DummyStep {
 	}
 
 	@Then("eu valido que o erro retornado tem o status code {string}")
-	public void eu_valido_que_o_erro_retornado_tem_o_status_code(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void eu_valido_que_o_erro_retornado_tem_o_status_code(String statusCode) {
+	    service.validateResponseWithError(statusCode);
 	}
 
 	@When("realizo uma request POST para {string} com dados válidos")
