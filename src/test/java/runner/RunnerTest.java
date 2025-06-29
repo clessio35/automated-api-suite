@@ -11,7 +11,7 @@ import utils.ReportUtils;
 @CucumberOptions(
   features = "src/test/resources/features",
   glue = {"steps", "hooks"},
-  tags= "@nonexistent-product"
+  tags= "@list-posts"
 )
 public class RunnerTest {
 

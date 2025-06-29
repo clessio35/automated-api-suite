@@ -83,4 +83,28 @@ public class DummyService {
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 
+	public void sendRequestPOSTMethod(String endpoint) {
+		ReportUtils.logInfo("send post request");
+		RestAssured.given().log().body()
+			.contentType(ContentType.JSON).body("")
+			.post(endpoint);
+		ReportUtils.logInfo("Status code: " + response.getStatusCode());
+	}
+
+	public void validateResponseWithCompleteLists() {
+		ReportUtils.logInfo("Validate complete list");
+		response.then().statusCode(200).log().body();
+		List<Map<String, Object>> posts = response.jsonPath().getList("posts");
+		for(Map<String, Object> post : posts) {
+			Assert.assertTrue(post.get("id").getClass().equals(Integer.class));
+		    Assert.assertTrue(post.get("title").getClass().equals(String.class));
+		    Assert.assertTrue(post.get("body").getClass().equals(String.class));
+		    List<?> tags = (List<?>) post.get("tags");
+		    Assert.assertNotNull(tags);
+		    Assert.assertTrue(post.get("views").getClass().equals(Integer.class));
+		    Assert.assertTrue(post.get("userId").getClass().equals(Integer.class));
+		}
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+	}
+
 }
