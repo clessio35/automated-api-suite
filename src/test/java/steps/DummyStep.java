@@ -51,8 +51,7 @@ public class DummyStep {
 
 	@Then("eu valido a resposta com a lista completa de comentários")
 	public void eu_valido_a_resposta_com_a_lista_completa_de_comentários() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    service.validateCompleteListComments();
 	}
 
 	@Then("eu valido os dados do comentário específico")

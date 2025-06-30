@@ -109,11 +109,24 @@ public class DummyService {
 	}
 
 	public void validateResponseWithSpecificPost() {
-		ReportUtils.logInfo("Validate complete list");
+		ReportUtils.logInfo("Validate specific post");
 		response.then().statusCode(200).log().body()
 			.body("id", Matchers.instanceOf(Integer.class))
 			.body("title", Matchers.instanceOf(String.class))
 			.body("body", Matchers.instanceOf(String.class));
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+	}
+
+	public void validateCompleteListComments() {
+		ReportUtils.logInfo("Validate complete list comments");
+		response.then().statusCode(200).log().body();
+		List<Map<String, Object>> comments = response.jsonPath().getList("comments");
+		for(Map<String, Object> comment : comments) {
+			Assert.assertTrue(comment.get("id").getClass().equals(Integer.class));
+			Assert.assertTrue(comment.get("body").getClass().equals(String.class));
+			Assert.assertTrue(comment.get("postId").getClass().equals(Integer.class));
+			Assert.assertTrue(comment.get("likes").getClass().equals(Integer.class));
+		}
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 

@@ -56,7 +56,7 @@ Feature: Testes de API - DummyJSON Fake REST API
 	  When realizo uma request GET para "<endpoint>"
 	  Then eu valido a resposta com a lista completa de comentários
 	  Examples:
-	    | url                | endpoint  |
+	    | url               	 | endpoint  |
 	    | https://dummyjson.com | /comments |
 	
 	@comment-details @comments
