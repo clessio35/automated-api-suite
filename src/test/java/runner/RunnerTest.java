@@ -11,7 +11,7 @@ import utils.ReportUtils;
 @CucumberOptions(
   features = "src/test/resources/features",
   glue = {"steps", "hooks"},
-  tags= "@list-comments"
+  tags= "@comment-details"
 )
 public class RunnerTest {
 

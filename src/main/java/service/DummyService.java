@@ -130,4 +130,16 @@ public class DummyService {
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 
+	public void validateResponseSpecificComment() {
+		ReportUtils.logInfo("Validate complete list comments");
+		response.then().statusCode(200).log().body()
+			.body("id", Matchers.instanceOf(Integer.class))
+			.body("body", Matchers.instanceOf(String.class))
+			.body("postId", Matchers.instanceOf(Integer.class))
+			.body("likes", Matchers.instanceOf(Integer.class));
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+		
+		
+	}
+
 }
