@@ -58,7 +58,7 @@ O projeto utiliza a biblioteca **Extent Reports** para gerar relatórios visuais
 ```bash
 mvn clean test
 
----
+```
 
 ## ⚙️ Integração Contínua
 
