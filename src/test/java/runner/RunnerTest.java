@@ -11,7 +11,7 @@ import utils.ReportUtils;
 @CucumberOptions(
   features = "src/test/resources/features",
   glue = {"steps", "hooks"},
-  tags= "@todo-details"
+  tags= "@all"
 )
 public class RunnerTest {
 

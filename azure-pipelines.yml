@@ -1,0 +1,20 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Maven@4
+  displayName: 'Build and Test with Maven'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'clean test'
+    options: '-B'
+
+- task: PowerShell@2
+  displayName: 'Run a PowerShell script'
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Hello from PowerShell"
