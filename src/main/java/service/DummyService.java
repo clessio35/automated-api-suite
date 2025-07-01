@@ -131,15 +131,26 @@ public class DummyService {
 	}
 
 	public void validateResponseSpecificComment() {
-		ReportUtils.logInfo("Validate complete list comments");
+		ReportUtils.logInfo("Validate specific comments list");
 		response.then().statusCode(200).log().body()
 			.body("id", Matchers.instanceOf(Integer.class))
 			.body("body", Matchers.instanceOf(String.class))
 			.body("postId", Matchers.instanceOf(Integer.class))
 			.body("likes", Matchers.instanceOf(Integer.class));
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
-		
-		
+	}
+
+	public void validateResponseWithCompleteTasksList() {
+		ReportUtils.logInfo("Validate complete Task list");
+		response.then().statusCode(200).log().body().extract().jsonPath();
+		List<Map<String, Object>> comments = response.jsonPath().getList("todos");
+		for(Map<String, Object> comment : comments){
+			Assert.assertTrue(comment.get("id").getClass().equals(Integer.class));
+			Assert.assertTrue(comment.get("todo").getClass().equals(String.class));
+			Assert.assertTrue(comment.get("completed").getClass().equals(Boolean.class));
+			Assert.assertTrue(comment.get("userId").getClass().equals(Integer.class));
+		}
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 
 }

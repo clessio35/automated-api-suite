@@ -76,7 +76,7 @@ Feature: Testes de API - DummyJSON Fake REST API
 	  When realizo uma request GET para "<endpoint>"
 	  Then eu valido a resposta com a lista completa de tarefas
 	  Examples:
-	    | url                | endpoint |
+	    | url               	 | endpoint |
 	    | https://dummyjson.com | /todos    |
 	
 	@todo-details @todos
