@@ -66,7 +66,6 @@ public class DummyStep {
 
 	@Then("eu valido os dados da tarefa específica")
 	public void eu_valido_os_dados_da_tarefa_específica() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    service.validateResponseSpecificTask();
 	}
 }

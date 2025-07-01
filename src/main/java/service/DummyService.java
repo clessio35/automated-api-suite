@@ -153,4 +153,14 @@ public class DummyService {
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 
+	public void validateResponseSpecificTask() {
+		ReportUtils.logInfo("Validate specific Task list");
+		response.then().statusCode(200).log().body()
+			.body("id", Matchers.instanceOf(Integer.class))
+			.body("todo", Matchers.instanceOf(String.class))
+			.body("completed", Matchers.instanceOf(Boolean.class))
+			.body("userId", Matchers.instanceOf(Integer.class));
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+	}
+
 }
