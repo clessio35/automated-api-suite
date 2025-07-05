@@ -1,7 +1,6 @@
 # 🧪 Automação de Testes de API - automated-api-suite
 
-Automação de testes da API **[inserir nome da API real, se desejar]**, desenvolvida em **Java 17**, utilizando **RestAssured**, **Cucumber (BDD)**, **JUnit** e **Hamcrest**.  
-O projeto inclui **relatórios detalhados com Extent Reports**, **geração de evidências em PDF** e integração contínua com **GitHub Actions**, **GitLab CI/CD** e **Jenkins**.
+Automação de testes da API DummyJSON, desenvolvida em Java 17, utilizando RestAssured, Cucumber (BDD), JUnit e Hamcrest. O projeto inclui relatórios detalhados com Extent Reports, geração de evidências em PDF, e execução dos testes tanto localmente (via Jenkins) quanto em ambientes de nuvem, com integração contínua utilizando GitHub Actions, GitLab CI/CD e Azure DevOps.
 
 ---
 
