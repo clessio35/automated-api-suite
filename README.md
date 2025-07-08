@@ -1,19 +1,28 @@
 # 🧪 Automação de Testes de API - automated-api-suite
 
 Automação de testes da API DummyJSON, desenvolvida em Java 17, utilizando RestAssured, Cucumber (BDD), JUnit e Hamcrest. O projeto inclui relatórios detalhados com Extent Reports, geração de evidências em PDF, e execução dos testes tanto localmente (via Jenkins) quanto em ambientes de nuvem, com integração contínua utilizando GitHub Actions, GitLab CI/CD e Azure DevOps.
+Agora também conta com análise de qualidade e cobertura de código utilizando o SonarQube.
 
 ---
 
 ## 🚀 Objetivo
 
+🚀 Objetivo
 Automatizar testes de API com foco em:
 
-- ✅ Testes automatizados para métodos HTTP (GET, POST, PUT, DELETE)
-- ✅ Escrita de cenários com Cucumber (BDD)
-- ✅ Validações com Hamcrest
-- ✅ Geração de evidências em PDF
-- ✅ Integração contínua com GitHub Actions, GitLab CI/CD e Jenkins
-- ✅ Relatórios completos com **Extent Reports**
+✅ Testes automatizados para métodos HTTP (GET, POST, PUT, DELETE)
+
+✅ Escrita de cenários com Cucumber (BDD)
+
+✅ Validações com Hamcrest
+
+✅ Geração de evidências em PDF
+
+✅ Integração contínua com GitHub Actions, GitLab CI/CD e Jenkins
+
+✅ Relatórios completos com Extent Reports
+
+✅ Análise de qualidade e cobertura de código com SonarQube
 
 ---
 
@@ -25,6 +34,22 @@ O projeto utiliza a biblioteca **Extent Reports** para gerar relatórios visuais
 - ✔️ Resultados (pass/fail)
 - ✔️ Logs detalhados
 - ✔️ Capturas de evidências (quando aplicável)
+
+
+📈 Análise de Qualidade com SonarQube
+Este projeto utiliza o SonarQube para análise contínua da qualidade do código, cobrindo aspectos como:
+
+✅ Cobertura de testes
+
+✅ Identificação de bugs e code smells
+
+✅ Análise de vulnerabilidades e hotspots de segurança
+
+✅ Acompanhamento de métricas de manutenção e legibilidade
+
+### 📸 Exemplo do Sonar
+
+![sonar](./images/sonar.png)
 
 ---
 
