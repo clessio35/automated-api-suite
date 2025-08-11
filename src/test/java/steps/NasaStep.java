@@ -2,19 +2,20 @@ package steps;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import service.NasaService;
 
 public class NasaStep {
 	
+	NasaService nasa = new NasaService();
+	
 	@When("realizo uma request GET para {string} com uma chave de API valida")
-	public void realizo_uma_request_get_para_com_uma_chave_de_api_valida(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void realizo_uma_request_get_para_com_uma_chave_de_api_valida(String endpoint) {
+	    nasa.requestGETMethodWithAPIKey(endpoint);
 	}
 
 	@Then("eu valido que a resposta contém os dados da imagem do dia")
 	public void eu_valido_que_a_resposta_contém_os_dados_da_imagem_do_dia() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    nasa.validateResponseWithImageData();
 	}
 
 	@When("realizo uma request GET para {string} com o parametro {string} igual a {string}")
