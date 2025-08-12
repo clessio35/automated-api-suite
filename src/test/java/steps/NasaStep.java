@@ -19,15 +19,13 @@ public class NasaStep {
 	}
 
 	@When("realizo uma request GET para {string} com o parametro {string} igual a {string}")
-	public void realizo_uma_request_get_para_com_o_parametro_igual_a(String string, String string2, String string3) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void realizo_uma_request_get_para_com_o_parametro_igual_a(String endpoint, String param, String data) {
+	    nasa.requestGETMethodWithAPIKeyAndParam(endpoint, param, data);
 	}
 
 	@Then("eu valido que a resposta contém as fotos tiradas nessa data")
 	public void eu_valido_que_a_resposta_contém_as_fotos_tiradas_nessa_data() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    nasa.validateResponseWithPictureData();
 	}
 
 	@When("realizo uma request GET para {string} com a data inicial {string} e final {string}")

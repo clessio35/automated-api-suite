@@ -12,11 +12,11 @@ Feature: Testes de API - NASA Open API
   @mars-photos @all
   Scenario: Obter fotos tiradas pelo rover Curiosity em uma data especifica
     Given que acesso a API "<url>"
-    When realizo uma request GET para "<endpoint>" com o parametro "earth_date" igual a "<data>"
+    When realizo uma request GET para "<endpoint>" com o parametro "<param>" igual a "<data>"
     Then eu valido que a resposta contém as fotos tiradas nessa data
     Examples:
-      | url                | endpoint                                              | data       |
-      | https://api.nasa.gov | /mars-photos/api/v1/rovers/curiosity/photos         | 2023-08-01 |
+      | url                | endpoint                                      |param        | data       |
+      | https://api.nasa.gov | /mars-photos/api/v1/rovers/curiosity/photos |  earth_date | 2023-08-01 |
 
   @neo-feed @all
   Scenario: Listar asteroides próximos da Terra em uma data específica

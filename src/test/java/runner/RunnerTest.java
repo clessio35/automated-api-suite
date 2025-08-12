@@ -11,7 +11,7 @@ import utils.ReportUtils;
 @CucumberOptions(
   features = "src/test/resources/features",
   glue = {"steps", "hooks"},
-  tags= "@apod"
+  tags= " @mars-photos"
 )
 public class RunnerTest {
 

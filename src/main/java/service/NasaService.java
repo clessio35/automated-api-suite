@@ -1,6 +1,10 @@
 package service;
 
+import java.util.List;
+import java.util.Map;
+
 import org.hamcrest.Matchers;
+import org.junit.Assert;
 
 import hooks.Hooks;
 import io.restassured.RestAssured;
@@ -28,6 +32,27 @@ public class NasaService {
 			.body("media_type", Matchers.instanceOf(String.class))
 			.body("service_version", Matchers.instanceOf(String.class))
 			.body("title", Matchers.is("Closest Ever Images Near the Sun"));
+		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
+	}
+
+	public void requestGETMethodWithAPIKeyAndParam(String endpoint, String param, String data) {
+		ReportUtils.logInfo("Send request with param: " + param + " for endpoint: " + endpoint);
+		response = RestAssured.given().log().all()
+				.queryParam("api_key", API_KEY)
+				.queryParam(param, data)
+				.contentType(ContentType.JSON).get(endpoint);
+	}
+
+	public void validateResponseWithPictureData() {
+		ReportUtils.logInfo("validate picture data");
+		response.then().log().body();
+		List<Map<String, Object>> pictures = response.jsonPath().getList("photos");
+		for(Map<String, Object> picture : pictures) {
+			Assert.assertTrue(picture.get("id").getClass().equals(Integer.class));
+		    Assert.assertTrue(picture.get("sol").getClass().equals(Integer.class));
+		    Assert.assertTrue(picture.get("img_src").getClass().equals(String.class));
+		    Assert.assertTrue(picture.get("earth_date").getClass().equals(String.class));
+		}
 		ReportUtils.attachEvidence(response, Hooks.getScenarioName());
 	}
 	
