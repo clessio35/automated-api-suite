@@ -1,4 +1,5 @@
 package runner;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -6,6 +7,7 @@ import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import utils.ReportUtils;
+import utils.MetricsServer;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -15,13 +17,17 @@ import utils.ReportUtils;
 )
 public class RunnerTest {
 
-    @BeforeClass
-    public static void beforeAll() {
-        ReportUtils.initReport();
-    }
+	@BeforeClass
+	public static void beforeAll() {
+	    MetricsServer.start();
+	    ReportUtils.initReport();
+	}
 
-    @AfterClass
-    public static void afterAll() {
-        ReportUtils.flushReport();
-    }
+	@AfterClass
+	public static void afterAll() {
+	    ReportUtils.flushReport();
+//	    MetricsServer.stop();  // pare o servidor só depois de tudo
+	}
+
+
 }
