@@ -9,11 +9,11 @@ import io.cucumber.junit.CucumberOptions;
 import utils.ReportUtils;
 import utils.MetricsServer;
 
-@RunWith(Cucumber.class)
+@RunWith(Cucumber.class) 
 @CucumberOptions(
   features = "src/test/resources/features",
   glue = {"steps", "hooks"},
-  tags= " @mars-photos"
+  tags= "@all"
 )
 public class RunnerTest {
 

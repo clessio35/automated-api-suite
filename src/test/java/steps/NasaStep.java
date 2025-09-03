@@ -29,15 +29,13 @@ public class NasaStep {
 	}
 
 	@When("realizo uma request GET para {string} com a data inicial {string} e final {string}")
-	public void realizo_uma_request_get_para_com_a_data_inicial_e_final(String string, String string2, String string3) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void realizo_uma_request_get_para_com_a_data_inicial_e_final(String endpoint, String start_date, String end_date) {
+	    nasa.requestGETMethodWithInicialDateAndFinalDate(endpoint, start_date, end_date);
 	}
 
 	@Then("eu valido que a resposta contém dados dos objetos próximos à Terra nesse período")
 	public void eu_valido_que_a_resposta_contém_dados_dos_objetos_próximos_à_terra_nesse_período() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    nasa.validateResponseWithEarthDate();
 	}
 
 }

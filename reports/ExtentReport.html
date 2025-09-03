@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">set. 2, 2025 09:20:06 AM</span></a>
+<a href="#"><span class="badge badge-primary">set. 3, 2025 08:52:33 AM</span></a>
 </li>
 </ul>
 </div>
@@ -79,9 +79,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Obter fotos tiradas pelo rover Curiosity em uma data especifica</p>
+            <p class="name">Listar todos os produtos</p>
             <p class="text-sm">
-              <span>09:20:07</span> / <span>00:00:11:055</span>
+              <span>08:52:34</span> / <span>00:00:06:972</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -89,10 +89,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Obter fotos tiradas pelo rover Curiosity em uma data especifica</h5>
-<span class='badge badge-success'>09.02.2025 09:20:07</span>
-<span class='badge badge-danger'>09.02.2025 09:20:18</span>
-<span class='badge badge-default'>00:00:11:055</span>
+<h5 class="test-status text-pass">Listar todos os produtos</h5>
+<span class='badge badge-success'>09.03.2025 08:52:34</span>
+<span class='badge badge-danger'>09.03.2025 08:52:41</span>
+<span class='badge badge-default'>00:00:06:972</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -104,23 +104,680 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>09:20:08</td>
+        <td>08:52:35</td>
+        <td>
+          Send request for endpoint: /products
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:38</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:38</td>
+        <td>
+          Validate List products
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:41</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Listar_todos_os_produtos/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Obter detalhes de um produto existente</p>
+            <p class="text-sm">
+              <span>08:52:41</span> / <span>00:00:01:641</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Obter detalhes de um produto existente</h5>
+<span class='badge badge-success'>09.03.2025 08:52:41</span>
+<span class='badge badge-danger'>09.03.2025 08:52:43</span>
+<span class='badge badge-default'>00:00:01:641</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:41</td>
+        <td>
+          Send request for endpoint: /products/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:43</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:43</td>
+        <td>
+          Validate product id
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:43</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_detalhes_de_um_produto_existente/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Obter detalhes de um produto inexistente</p>
+            <p class="text-sm">
+              <span>08:52:43</span> / <span>00:00:00:946</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Obter detalhes de um produto inexistente</h5>
+<span class='badge badge-success'>09.03.2025 08:52:43</span>
+<span class='badge badge-danger'>09.03.2025 08:52:44</span>
+<span class='badge badge-default'>00:00:00:946</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:43</td>
+        <td>
+          Send request for endpoint: /products/9999
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Status code: 404
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Validate Error Code
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_detalhes_de_um_produto_inexistente/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Listar todas as postagens</p>
+            <p class="text-sm">
+              <span>08:52:44</span> / <span>00:00:00:291</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Listar todas as postagens</h5>
+<span class='badge badge-success'>09.03.2025 08:52:44</span>
+<span class='badge badge-danger'>09.03.2025 08:52:44</span>
+<span class='badge badge-default'>00:00:00:291</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Send request for endpoint: /posts
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Validate complete list
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Listar_todas_as_postagens/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Obter detalhes de uma postagem existente</p>
+            <p class="text-sm">
+              <span>08:52:44</span> / <span>00:00:01:796</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Obter detalhes de uma postagem existente</h5>
+<span class='badge badge-success'>09.03.2025 08:52:44</span>
+<span class='badge badge-danger'>09.03.2025 08:52:46</span>
+<span class='badge badge-default'>00:00:01:796</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:44</td>
+        <td>
+          Send request for endpoint: /posts/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:46</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:46</td>
+        <td>
+          Validate specific post
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:46</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_detalhes_de_uma_postagem_existente/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Listar todos os comentários</p>
+            <p class="text-sm">
+              <span>08:52:46</span> / <span>00:00:01:172</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Listar todos os comentários</h5>
+<span class='badge badge-success'>09.03.2025 08:52:46</span>
+<span class='badge badge-danger'>09.03.2025 08:52:47</span>
+<span class='badge badge-default'>00:00:01:172</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:46</td>
+        <td>
+          Send request for endpoint: /comments
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:47</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:47</td>
+        <td>
+          Validate complete list comments
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:47</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Listar_todos_os_comentários/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Obter detalhes de um comentário existente</p>
+            <p class="text-sm">
+              <span>08:52:47</span> / <span>00:00:02:847</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Obter detalhes de um comentário existente</h5>
+<span class='badge badge-success'>09.03.2025 08:52:47</span>
+<span class='badge badge-danger'>09.03.2025 08:52:50</span>
+<span class='badge badge-default'>00:00:02:847</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:47</td>
+        <td>
+          Send request for endpoint: /comments/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:50</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:50</td>
+        <td>
+          Validate specific comments list
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:50</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_detalhes_de_um_comentário_existente/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Listar todas as tarefas</p>
+            <p class="text-sm">
+              <span>08:52:50</span> / <span>00:00:01:129</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Listar todas as tarefas</h5>
+<span class='badge badge-success'>09.03.2025 08:52:50</span>
+<span class='badge badge-danger'>09.03.2025 08:52:51</span>
+<span class='badge badge-default'>00:00:01:129</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:50</td>
+        <td>
+          Send request for endpoint: /todos
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:51</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:51</td>
+        <td>
+          Validate complete Task list
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:51</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Listar_todas_as_tarefas/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Obter detalhes de uma tarefa existente</p>
+            <p class="text-sm">
+              <span>08:52:51</span> / <span>00:00:02:903</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Obter detalhes de uma tarefa existente</h5>
+<span class='badge badge-success'>09.03.2025 08:52:51</span>
+<span class='badge badge-danger'>09.03.2025 08:52:54</span>
+<span class='badge badge-default'>00:00:02:903</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:51</td>
+        <td>
+          Send request for endpoint: /todos/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:54</td>
+        <td>
+          Status code: 200
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:54</td>
+        <td>
+          Validate specific Task list
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:54</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_detalhes_de_uma_tarefa_existente/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Obter a imagem astronomica do dia (APOD)</p>
+            <p class="text-sm">
+              <span>08:52:54</span> / <span>00:00:01:126</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Obter a imagem astronomica do dia (APOD)</h5>
+<span class='badge badge-success'>09.03.2025 08:52:54</span>
+<span class='badge badge-danger'>09.03.2025 08:52:55</span>
+<span class='badge badge-default'>00:00:01:126</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:54</td>
+        <td>
+          Send request for endpoint: /planetary/apod
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:55</td>
+        <td>
+          Validate image data
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:55</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_a_imagem_astronomica_do_dia_(APOD)/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Obter fotos tiradas pelo rover Curiosity em uma data especifica</p>
+            <p class="text-sm">
+              <span>08:52:55</span> / <span>00:00:02:302</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Obter fotos tiradas pelo rover Curiosity em uma data especifica</h5>
+<span class='badge badge-success'>09.03.2025 08:52:55</span>
+<span class='badge badge-danger'>09.03.2025 08:52:57</span>
+<span class='badge badge-default'>00:00:02:302</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:55</td>
         <td>
           Send request with param: earth_date for endpoint: /mars-photos/api/v1/rovers/curiosity/photos
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>09:20:12</td>
+        <td>08:52:56</td>
         <td>
           Validate picture data
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>09:20:18</td>
+        <td>08:52:57</td>
         <td>
-          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_fotos_tiradas_pelo_rover_Curiosity_em_uma_data_especifica/evidences_02092025_0920.pdf' target='_blank'>Clique aqui para abrir</a>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Obter_fotos_tiradas_pelo_rover_Curiosity_em_uma_data_especifica/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Listar asteroides próximos da Terra em uma data específica</p>
+            <p class="text-sm">
+              <span>08:52:57</span> / <span>00:00:01:743</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Listar asteroides próximos da Terra em uma data específica</h5>
+<span class='badge badge-success'>09.03.2025 08:52:57</span>
+<span class='badge badge-danger'>09.03.2025 08:52:59</span>
+<span class='badge badge-default'>00:00:01:743</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:57</td>
+        <td>
+          Send request with dates: start-date: 2023-08-01 end-date: 2023-08-03
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:59</td>
+        <td>
+          Validate earth data
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>08:52:59</td>
+        <td>
+          Evidência em PDF: <a href='/C:/workspace/workspace-eclipse/automated-api-suite/Evidences/API/Listar_asteroides_próximos_da_Terra_em_uma_data_específica/evidences_03092025_0852.pdf' target='_blank'>Clique aqui para abrir</a>
         </td>
       </tr>
   </tbody>
@@ -142,19 +799,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>set. 2, 2025 09:20:06 AM</h3>
+<h3>set. 3, 2025 08:52:33 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>set. 2, 2025 09:20:18 AM</h3>
+<h3>set. 3, 2025 08:52:59 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>12</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -177,7 +834,7 @@
 </div>
 <div class="card-footer">
 <div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<b>12</b> tests passed
 </small>
 </div>
 <div>
@@ -202,7 +859,7 @@
 <div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>3</b> others
+<b data-tooltip='%'>45</b> others
 </small>
 </div>
 </div>
@@ -218,7 +875,7 @@
 </div></div>
 <script>
 var timeline = {
-"Obter fotos tiradas pelo rover Curiosity em uma data especifica":11.055
+"Listar todos os produtos":6.972,"Obter detalhes de um produto existente":1.641,"Obter detalhes de um produto inexistente":0.946,"Listar todas as postagens":0.291,"Obter detalhes de uma postagem existente":1.796,"Listar todos os comentários":1.172,"Obter detalhes de um comentário existente":2.847,"Listar todas as tarefas":1.129,"Obter detalhes de uma tarefa existente":2.903,"Obter a imagem astronomica do dia (APOD)":1.126,"Obter fotos tiradas pelo rover Curiosity em uma data especifica":2.302,"Listar asteroides próximos da Terra em uma data específica":1.743
 };
 </script>
 <div class="row">
@@ -227,7 +884,7 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
+passParent: 12,
 failParent: 0,
 warningParent: 0,
 skipParent: 0,
@@ -248,7 +905,7 @@ passEvents: 0,
 failEvents: 0,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 3
+infoEvents: 45
 };
 </script>        </div>
       </div>
