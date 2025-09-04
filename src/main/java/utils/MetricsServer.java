@@ -13,13 +13,20 @@ public class MetricsServer {
             res.type("text/plain");
             return registry.scrape(); // formato que o Prometheus entende
         });
+        System.out.println("MetricsServer iniciado na porta 8085");
+        System.out.println("Metrics for prometheus: ");
+        System.out.println(" test_execution_time_seconds_count ");
+        System.out.println(" test_execution_time_seconds_sum");
+        System.out.println(" test_execution_time_seconds_max");
+        System.out.println(" test_execution_time_seconds_sum / test_execution_time_seconds_count");
+        System.out.println(" test_execution_time_seconds_sum{status=\"passed\"}");
+        System.out.println(" end of metrics...");
     }
     
     public static void stop() {
         spark.Spark.stop();
         spark.Spark.awaitStop();
     }
-
-
+    
 }
 

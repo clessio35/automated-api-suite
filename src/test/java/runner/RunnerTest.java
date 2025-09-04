@@ -26,7 +26,7 @@ public class RunnerTest {
 	@AfterClass
 	public static void afterAll() {
 	    ReportUtils.flushReport();
-//	    MetricsServer.stop();  // pare o servidor só depois de tudo
+	    MetricsServer.stop();  // pare o servidor só depois de tudo
 	}
 
 
